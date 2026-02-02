@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outils du Mémoire DEC | Cabinet 100% Numérique</title>
+    <title>Annexes du Mémoire DEC | Cabinet 100% Numérique</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -200,10 +200,9 @@
         main {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 5rem 2rem;
+            padding: 4rem 2rem;
         }
 
-        /* Section Intro */
         .section-intro {
             text-align: center;
             max-width: 800px;
@@ -213,7 +212,6 @@
         .section-intro h2 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2.5rem;
-            font-weight: 600;
             color: var(--primary);
             margin-bottom: 1rem;
         }
@@ -221,7 +219,6 @@
         .section-intro p {
             color: var(--text-muted);
             font-size: 1.1rem;
-            line-height: 1.8;
         }
 
         /* Parts Navigation */
@@ -235,26 +232,25 @@
 
         .part-tab {
             padding: 1rem 2rem;
-            background: white;
             border: 2px solid var(--border-subtle);
+            background: white;
             border-radius: 50px;
-            cursor: pointer;
-            font-weight: 500;
+            font-family: 'Outfit', sans-serif;
             font-size: 0.95rem;
+            font-weight: 500;
             color: var(--text-muted);
+            cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .part-tab:hover,
         .part-tab.active {
             background: var(--primary);
-            border-color: var(--primary);
             color: white;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-soft);
+            border-color: var(--primary);
         }
 
-        /* Tools Grid */
+        /* Tools Section */
         .tools-section {
             margin-bottom: 5rem;
         }
@@ -264,7 +260,7 @@
             align-items: center;
             gap: 1.5rem;
             margin-bottom: 2rem;
-            padding-bottom: 1rem;
+            padding-bottom: 1.5rem;
             border-bottom: 2px solid var(--border-subtle);
         }
 
@@ -279,47 +275,30 @@
         .part-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.8rem;
-            font-weight: 600;
             color: var(--primary);
+            font-weight: 600;
         }
 
+        /* Tools Grid */
         .tools-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
-        /* Tool Card */
         .tool-card {
             background: white;
             border-radius: 16px;
             padding: 2rem;
             box-shadow: var(--shadow-soft);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--border-subtle);
+            transition: all 0.4s ease;
             position: relative;
-            overflow: hidden;
-        }
-
-        .tool-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--accent) 0%, var(--secondary) 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            border: 1px solid var(--border-subtle);
         }
 
         .tool-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
-        }
-
-        .tool-card:hover::before {
-            opacity: 1;
         }
 
         .tool-header {
@@ -330,17 +309,12 @@
         }
 
         .tool-number {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
             font-weight: 700;
-            font-size: 1.1rem;
-            flex-shrink: 0;
+            color: var(--accent);
+            line-height: 1;
+            min-width: 50px;
         }
 
         .tool-title-block {
@@ -348,90 +322,70 @@
         }
 
         .tool-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
             font-weight: 600;
             color: var(--primary);
+            margin-bottom: 0.5rem;
             line-height: 1.3;
-            margin-bottom: 0.25rem;
         }
 
         .tool-format {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            background: var(--bg-warm);
-        }
-
-        .tool-format.excel {
-            color: #217346;
-            background: rgba(33, 115, 70, 0.1);
         }
 
         .tool-format.html {
-            color: #e44d26;
-            background: rgba(228, 77, 38, 0.1);
+            background: #e8f5e9;
+            color: #2e7d32;
         }
 
-        .tool-format.word {
-            color: #2b579a;
-            background: rgba(43, 87, 154, 0.1);
+        .tool-format.excel {
+            background: #e8f5e9;
+            color: #1b5e20;
         }
 
         .tool-format.pdf {
-            color: #f40f02;
-            background: rgba(244, 15, 2, 0.1);
-        }
-
-        .tool-format.notion {
-            color: #000;
-            background: rgba(0, 0, 0, 0.08);
-        }
-
-        .tool-format.prezi {
-            color: #3181ff;
-            background: rgba(49, 129, 255, 0.1);
+            background: #ffebee;
+            color: #c62828;
         }
 
         .tool-description {
             color: var(--text-muted);
             font-size: 0.95rem;
-            line-height: 1.6;
             margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
         .tool-objective {
             background: var(--bg-warm);
-            padding: 1rem;
             border-radius: 10px;
+            padding: 1rem;
             margin-bottom: 1.5rem;
         }
 
         .tool-objective-label {
             font-size: 0.75rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
             color: var(--accent);
-            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.25rem;
         }
 
         .tool-objective-text {
             font-size: 0.9rem;
             color: var(--text-dark);
-            font-style: italic;
         }
 
         .tool-actions {
             display: flex;
             gap: 0.75rem;
-            flex-wrap: wrap;
         }
 
         .tool-btn {
@@ -448,24 +402,28 @@
             border: none;
         }
 
+        .tool-btn .icon {
+            width: 18px;
+            height: 18px;
+        }
+
         .tool-btn-primary {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: var(--primary);
             color: white;
         }
 
         .tool-btn-primary:hover {
+            background: var(--secondary);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(26, 41, 64, 0.3);
         }
 
         .tool-btn-secondary {
-            background: white;
+            background: transparent;
             color: var(--primary);
-            border: 2px solid var(--border-subtle);
+            border: 1px solid var(--border-subtle);
         }
 
         .tool-btn-secondary:hover {
-            border-color: var(--primary);
             background: var(--bg-warm);
         }
 
@@ -473,49 +431,50 @@
             background: var(--bg-warm);
             color: var(--text-muted);
             cursor: not-allowed;
-            opacity: 0.7;
         }
 
-        /* Icon styles */
-        .icon {
-            width: 18px;
-            height: 18px;
+        /* Status Badge */
+        .status-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-ready {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status-pending {
+            background: #fff3e0;
+            color: #e65100;
         }
 
         /* Footer */
         footer {
             background: var(--primary);
             color: white;
-            padding: 4rem 2rem;
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
         }
 
         .footer-content {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .footer-brand h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-brand h3 span {
-            color: var(--accent);
-        }
-
-        .footer-brand p {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.95rem;
-            line-height: 1.7;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
         }
 
         .footer-section h4 {
-            font-size: 1rem;
-            font-weight: 600;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
             color: var(--accent);
         }
@@ -531,7 +490,6 @@
         .footer-section a {
             color: rgba(255,255,255,0.7);
             text-decoration: none;
-            font-size: 0.9rem;
             transition: color 0.3s ease;
         }
 
@@ -546,7 +504,7 @@
             border-top: 1px solid rgba(255,255,255,0.1);
             text-align: center;
             color: rgba(255,255,255,0.5);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
         /* Animations */
@@ -572,11 +530,10 @@
             }
         }
 
-        /* Scroll animations */
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.6s ease;
         }
 
         .animate-on-scroll.visible {
@@ -584,29 +541,10 @@
             transform: translateY(0);
         }
 
-        /* Mobile responsive */
+        /* Responsive */
         @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero {
-                padding: 8rem 1.5rem 4rem;
-            }
-
             .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
+                font-size: 2.5rem;
             }
 
             .hero-stats {
@@ -618,70 +556,19 @@
                 grid-template-columns: 1fr;
             }
 
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .parts-nav {
+            .nav-container {
                 flex-direction: column;
-                align-items: center;
+                gap: 1rem;
             }
 
-            .part-tab {
-                width: 100%;
-                max-width: 300px;
+            nav ul {
+                gap: 1rem;
+            }
+
+            .part-header {
+                flex-direction: column;
                 text-align: center;
             }
-        }
-
-        /* Status indicator */
-        .status-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            padding: 0.35rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .status-ready {
-            background: rgba(34, 197, 94, 0.1);
-            color: #22c55e;
-        }
-
-        .status-pending {
-            background: rgba(251, 191, 36, 0.1);
-            color: #f59e0b;
-        }
-
-        /* Tooltip */
-        .tooltip {
-            position: relative;
-        }
-
-        .tooltip::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .tooltip:hover::after {
-            opacity: 1;
         }
     </style>
 </head>
@@ -704,19 +591,15 @@
         <div class="hero-content">
             <div class="hero-badge">Diplôme d'Expertise Comptable — Session 2026</div>
             <h1>Entreprendre en tant qu'expert-comptable dans un univers <span>numérisé</span></h1>
-            <p class="hero-subtitle">Guide pratique à la création d'un cabinet 100% numérique — Outils et annexes opérationnels</p>
+            <p class="hero-subtitle">Guide pratique à la création d'un cabinet 100% numérique</p>
             <div class="hero-stats">
                 <div class="stat">
                     <span class="stat-number">23</span>
-                    <span class="stat-label">Outils pratiques</span>
+                    <span class="stat-label">Annexes pratiques</span>
                 </div>
                 <div class="stat">
                     <span class="stat-number">3</span>
                     <span class="stat-label">Parties structurantes</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Opérationnel</span>
                 </div>
             </div>
         </div>
@@ -724,8 +607,8 @@
 
     <main>
         <section class="section-intro animate-on-scroll">
-            <h2>Boîte à outils du cabinet numérique</h2>
-            <p>Ces 23 outils constituent le cœur opérationnel du mémoire. Conçus pour être immédiatement exploitables, ils accompagnent l'expert-comptable créateur à chaque étape de son projet : du diagnostic initial jusqu'à la fidélisation de ses équipes.</p>
+            <h2>Annexes du mémoire</h2>
+            <p>Ces 23 annexes constituent le cœur opérationnel du mémoire. Conçues pour être immédiatement exploitables, elles accompagnent l'expert-comptable créateur à chaque étape de son projet : du diagnostic initial jusqu'à la fidélisation de ses équipes.</p>
         </section>
 
         <div class="parts-nav">
@@ -739,94 +622,94 @@
             <div class="part-header">
                 <span class="part-number">I</span>
                 <div>
-                    <h2 class="part-title">Construire les fondations du cabinet numérique</h2>
+                    <h2 class="part-title">Stratégie fondamentale du cabinet 100% numérique et conception du modèle économique</h2>
                 </div>
             </div>
 
             <div class="tools-grid">
-                <!-- Outil 1 -->
+                <!-- Annexe 1 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">01</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Chiffres clés des cabinets d'expertise comptable</h3>
-                            <span class="tool-format pdf">PDF</span>
+                            <h3 class="tool-title">Les chiffres clés des cabinets d'expertise comptable</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
                     <p class="tool-description">Panorama statistique de la profession : structure du marché, tendances économiques, benchmarks de performance pour calibrer son positionnement.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Disposer de données sectorielles fiables pour éclairer les arbitrages stratégiques</div>
+                        <div class="tool-objective-text">Fournir des données de référence sur le secteur pour étayer les décisions stratégiques</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
                 </div>
 
-                <!-- Outil 2 -->
+                <!-- Annexe 2 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">02</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Diagnostic de maturité numérique</h3>
-                            <span class="tool-format excel">Excel</span>
+                            <h3 class="tool-title">Modèles de Diagnostic Numérique : Check-lists et évaluations pour déterminer la maturité digitale d'un cabinet</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Grille d'auto-évaluation sur 15 critères couvrant infrastructure, compétences et processus. Score automatique et axes de progression.</p>
+                    <p class="tool-description">Grille d'auto-évaluation couvrant infrastructure, compétences et processus. Score automatique et axes de progression.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Évaluer objectivement sa maturité digitale et identifier les priorités d'investissement</div>
+                        <div class="tool-objective-text">Évaluer la maturité digitale du cabinet pour identifier les axes d'amélioration</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
                 </div>
 
-                <!-- Outil 3 -->
+                <!-- Annexe 3 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">03</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Matrice SWOT numérique</h3>
-                            <span class="tool-format word">Word</span>
+                            <h3 class="tool-title">Autodiagnostic et structure du projet d'action : Matrice SWOT détaillée</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Analyse stratégique adaptée au contexte digital : forces/faiblesses internes, opportunités/menaces du marché numérisé.</p>
+                    <p class="tool-description">Matrice d'analyse stratégique pour identifier forces, faiblesses, opportunités et menaces dans le contexte d'un cabinet numérique.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Orienter la stratégie numérique en fonction du diagnostic terrain</div>
+                        <div class="tool-objective-text">Identifier forces, faiblesses, opportunités et menaces pour orienter la stratégie numérique du cabinet</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
                 </div>
 
-                <!-- Outil 4 -->
+                <!-- Annexe 4 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">04</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Diagramme de PERT</h3>
-                            <span class="tool-format word">Word</span>
+                            <h3 class="tool-title">Diagramme de PERT (Program Evaluation and Review Technique)</h3>
+                            <span class="tool-format excel">Excel</span>
                         </div>
                     </div>
-                    <p class="tool-description">Planification du projet de création avec identification du chemin critique, des dépendances et des marges de manœuvre.</p>
+                    <p class="tool-description">Outil de planification pour gérer le processus de création et de modernisation du cabinet avec visualisation des dépendances entre tâches.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Maîtriser le calendrier de création et anticiper les goulets d'étranglement</div>
+                        <div class="tool-objective-text">Planifier et gérer le projet de création ou de modernisation du cabinet</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
@@ -836,66 +719,66 @@
                     </div>
                 </div>
 
-                <!-- Outil 5 -->
+                <!-- Annexe 5 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">05</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Carte mentale des organisations OEC</h3>
-                            <span class="tool-format prezi">Prezi</span>
+                            <h3 class="tool-title">Carte mentale des organisations de l'ordre de l'expertise comptable et de son environnement</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Navigation interactive dans l'écosystème institutionnel : CNOEC, CROEC, organismes de formation, ressources disponibles.</p>
+                    <p class="tool-description">Visualisation interactive des compositions, syndicats, contacts et clubs liés à l'ordre des experts-comptables.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">S'orienter efficacement dans les ressources institutionnelles de la profession</div>
+                        <div class="tool-objective-text">Comprendre la structure et les ressources disponibles au sein de l'organisation professionnelle</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
                 </div>
 
-                <!-- Outil 6 -->
+                <!-- Annexe 6 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">06</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Cartographie du système d'information</h3>
-                            <span class="tool-format prezi">Prezi</span>
+                            <h3 class="tool-title">Carte mentale Cartographie SI d'un cabinet numérique</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Architecture visuelle du SI cible : briques logicielles, flux de données, points d'intégration, redondances à éliminer.</p>
+                    <p class="tool-description">Architecture visuelle du système d'information type d'un cabinet 100% numérique avec les interconnexions entre outils.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Concevoir un écosystème numérique cohérent et interopérable</div>
+                        <div class="tool-objective-text">Visualiser l'architecture du système d'information du cabinet pour une meilleure intégration des outils numériques</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
                 </div>
 
-                <!-- Outil 7 -->
+                <!-- Annexe 7 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">07</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Prévisionnel financier détaillé</h3>
+                            <h3 class="tool-title">Prévisionnel détaillé dans le cadre de l'évaluation du capital de départ et des besoins de financements</h3>
                             <span class="tool-format excel">Excel</span>
                         </div>
                     </div>
-                    <p class="tool-description">Modèle financier complet avec simulations multi-scénarios, seuils de rentabilité, plan de trésorerie et indicateurs de viabilité.</p>
+                    <p class="tool-description">Modèle financier complet avec plusieurs simulations via des macros Excel pour évaluer différents scénarios de création.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Valider la faisabilité économique et piloter les arbitrages d'investissement</div>
+                        <div class="tool-objective-text">Évaluer le capital nécessaire, les besoins de financement et effectuer des simulations financières pour le cabinet</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
@@ -905,93 +788,93 @@
                     </div>
                 </div>
 
-                <!-- Outil 8 -->
+                <!-- Annexe 8 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">08</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Business Model Canvas</h3>
-                            <span class="tool-format word">Word</span>
+                            <h3 class="tool-title">Proposition d'une matrice sous forme de Business Model Canvas</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Formalisation du modèle économique : proposition de valeur, segments clients, canaux, ressources clés et structure de coûts.</p>
+                    <p class="tool-description">Business Model Canvas adapté à la création d'un cabinet d'expertise comptable numérique avec les 9 blocs stratégiques.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Structurer et communiquer le modèle d'affaires du cabinet numérique</div>
+                        <div class="tool-objective-text">Structurer le modèle économique du cabinet pour une vision claire de sa stratégie numérique</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
                 </div>
 
-                <!-- Outil 9 -->
+                <!-- Annexe 9 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">09</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Planification des tâches</h3>
-                            <span class="tool-format notion">Notion/Trello</span>
+                            <h3 class="tool-title">Aide à la planification des tâches</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Template de gestion de projet : workflows, attribution des responsabilités, suivi d'avancement et points de contrôle.</p>
+                    <p class="tool-description">Modèle de gestion de projet inspiré des méthodologies agiles pour organiser les missions et tâches du cabinet.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Organiser efficacement les missions internes et le suivi de production</div>
+                        <div class="tool-objective-text">Organiser et coordonner les missions et les tâches internes du cabinet</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
                 </div>
 
-                <!-- Outil 10 -->
+                <!-- Annexe 10 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">10</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Comparatif des logiciels de gestion</h3>
-                            <span class="tool-format excel">Excel</span>
+                            <h3 class="tool-title">Liste des logiciels de gestion de cabinet présent sur le marché</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Analyse multicritère des solutions du marché : fonctionnalités, tarification, intégrations, support et évolutivité.</p>
+                    <p class="tool-description">Comparatif détaillé des solutions pour la gestion des clients, des missions et de la facturation avec liens API et critères de choix.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Sélectionner les outils adaptés au cabinet sur des bases objectives</div>
+                        <div class="tool-objective-text">Comparer et sélectionner les logiciels adaptés aux besoins spécifiques du cabinet</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
                 </div>
 
-                <!-- Outil 11 -->
+                <!-- Annexe 11 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">11</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Matrice des risques</h3>
-                            <span class="tool-format prezi">Prezi</span>
+                            <h3 class="tool-title">Matrice d'identification des risques pour l'expert-comptable</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Cartographie visuelle des risques : identification, évaluation probabilité/impact, mesures de mitigation et suivi.</p>
+                    <p class="tool-description">Cartographie interactive des risques métier, numériques et réglementaires avec évaluation de la criticité et mesures de mitigation.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Anticiper et gérer proactivement les risques du projet numérique</div>
+                        <div class="tool-objective-text">Identifier et évaluer les risques associés à l'activité du cabinet</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
@@ -1004,167 +887,144 @@
             <div class="part-header">
                 <span class="part-number">II</span>
                 <div>
-                    <h2 class="part-title">Conquérir et fidéliser les clients</h2>
+                    <h2 class="part-title">Mise en œuvre de la stratégie d'acquisition et de fidélisation des clients</h2>
                 </div>
             </div>
 
             <div class="tools-grid">
-                <!-- Outil 12 -->
+                <!-- Annexe 12 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">12</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Prompts IA pour LinkedIn</h3>
-                            <span class="tool-format word">Word</span>
+                            <h3 class="tool-title">Exemple de prompt ChatGPT dans l'accompagnement à la rédaction d'articles sur LinkedIn</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Bibliothèque de prompts optimisés pour la prospection et la création de contenu professionnel, conformes à la déontologie.</p>
+                    <p class="tool-description">Bibliothèque de prompts optimisés pour générer du contenu professionnel engageant dans le cadre de la prospection client.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Développer sa visibilité professionnelle de manière éthique et efficace</div>
+                        <div class="tool-objective-text">Créer du contenu engageant pour la prospection client sur LinkedIn</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
                 </div>
 
-                <!-- Outil 13 -->
+                <!-- Annexe 13 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">13</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Questionnaire de prise de connaissance client</h3>
-                            <span class="tool-format word">Word</span>
+                            <h3 class="tool-title">Questionnaire de prise de connaissance du client</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Trame structurée pour le premier entretien : situation de l'entreprise, besoins, attentes, et éléments d'évaluation des risques LCB-FT.</p>
+                    <p class="tool-description">Formulaire structuré pour collecter les informations essentielles lors de l'entrée en relation avec un nouveau client.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Collecter systématiquement les informations nécessaires à l'acceptation de mission</div>
+                        <div class="tool-objective-text">Collecter des informations clés sur les nouveaux clients pour personnaliser les services</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
                 </div>
 
-                <!-- Outil 14 -->
+                <!-- Annexe 14 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">14</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Lettre de mission type</h3>
-                            <span class="tool-format word">Word</span>
+                            <h3 class="tool-title">Liste et détails des outils de signature électronique</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Modèle contractuel complet : périmètre de mission, obligations réciproques, honoraires, clauses RGPD et conditions générales.</p>
+                    <p class="tool-description">Comparatif des solutions de signature électronique valables pour tous les documents officiels avec niveaux de conformité eIDAS.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Sécuriser juridiquement la relation client dès le démarrage</div>
+                        <div class="tool-objective-text">Sélectionner des solutions pour la signature électronique des documents officiels</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
                 </div>
 
-                <!-- Outil 15 -->
+                <!-- Annexe 15 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">15</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Process d'onboarding client</h3>
-                            <span class="tool-format word">Word</span>
+                            <h3 class="tool-title">Carte mentale intégration client</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Parcours d'intégration détaillé : étapes, check-lists, modèles de communication et jalons de validation.</p>
+                    <p class="tool-description">Visualisation du parcours d'onboarding client avec les étapes clés, points de contact et livrables attendus.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Garantir une prise en charge fluide et professionnelle des nouveaux clients</div>
+                        <div class="tool-objective-text">Structurer le processus d'accueil et d'intégration des nouveaux clients</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
                 </div>
 
-                <!-- Outil 16 -->
+                <!-- Annexe 16 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">16</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Check-list conformité RGPD</h3>
-                            <span class="tool-format excel">Excel</span>
+                            <h3 class="tool-title">Les rendez-vous clients et la communication digitalisée : technologies émergentes</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Audit de conformité complet : registre des traitements, analyse d'impact, droits des personnes et mesures de sécurité.</p>
+                    <p class="tool-description">Carte mentale explorant les technologies actuelles et leur impact sur la relation client dans l'expertise comptable.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Vérifier et documenter la conformité aux exigences de protection des données</div>
+                        <div class="tool-objective-text">Explorer les technologies émergentes pour améliorer la communication avec les clients</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
                 </div>
 
-                <!-- Outil 17 -->
+                <!-- Annexe 17 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">17</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Tableau de bord fidélisation</h3>
-                            <span class="tool-format excel">Excel</span>
+                            <h3 class="tool-title">Prompt ChatGPT pour la mise en place d'une Newsletter mensuelle</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Pilotage de la relation client : indicateurs de satisfaction, alerte attrition, calendrier des contacts et actions de fidélisation.</p>
+                    <p class="tool-description">Modèles de prompts pour générer des newsletters informatives et attractives à destination des clients.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Anticiper et prévenir le départ des clients par un suivi proactif</div>
+                        <div class="tool-objective-text">Générer des newsletters informatives et attractives pour maintenir le lien avec les clients</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                            Bientôt disponible
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Outil 18 -->
-                <div class="tool-card animate-on-scroll">
-                    <span class="status-badge status-pending">À venir</span>
-                    <div class="tool-header">
-                        <div class="tool-number">18</div>
-                        <div class="tool-title-block">
-                            <h3 class="tool-title">Grille tarifaire</h3>
-                            <span class="tool-format excel">Excel</span>
-                        </div>
-                    </div>
-                    <p class="tool-description">Structuration de la politique de prix : forfaits, tarifs horaires, packages de services et simulateur de devis.</p>
-                    <div class="tool-objective">
-                        <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Construire une offre tarifaire cohérente, rentable et lisible pour les clients</div>
-                    </div>
-                    <div class="tool-actions">
-                        <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
@@ -1177,94 +1037,117 @@
             <div class="part-header">
                 <span class="part-number">III</span>
                 <div>
-                    <h2 class="part-title">Recruter, intégrer et fidéliser les collaborateurs</h2>
+                    <h2 class="part-title">Processus de recrutement, d'intégration et de fidélisation de l'équipe</h2>
                 </div>
             </div>
 
             <div class="tools-grid">
-                <!-- Outil 19 -->
+                <!-- Annexe 18 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">18</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Méthodologie de recrutement du collaborateur : de la recherche aux entretiens</h3>
+                            <span class="tool-format html">HTML</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Guide complet du processus de recrutement incluant sourcing, présélection, entretiens et intégration.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Définir les étapes clés pour le recrutement de collaborateurs adaptés au cabinet</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Annexe 19 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">19</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Process de recrutement</h3>
-                            <span class="tool-format word">Word</span>
+                            <h3 class="tool-title">Fiche de poste détaillée en fonction du besoin et du profil recherché</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Méthodologie complète d'embauche : sourcing, grille d'entretien, tests techniques, évaluation et onboarding administratif.</p>
+                    <p class="tool-description">Modèles de fiches de poste personnalisables avec compétences requises, missions et indicateurs de performance.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Professionnaliser le recrutement pour attirer et sélectionner les bons profils</div>
+                        <div class="tool-objective-text">Définir précisément les responsabilités et qualifications requises pour chaque poste</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
                 </div>
 
-                <!-- Outil 20 -->
+                <!-- Annexe 20 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">20</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Fiche de poste type</h3>
-                            <span class="tool-format word">Word</span>
+                            <h3 class="tool-title">Test de connaissance, test de savoir être et savoir-faire</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Modèle adaptable aux différents grades : missions, compétences requises, rattachement, objectifs et évolutions possibles.</p>
+                    <p class="tool-description">Batterie de tests pour évaluer l'adéquation des candidats avec les valeurs et compétences attendues par le cabinet.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Définir clairement les rôles pour une organisation efficace et des recrutements ciblés</div>
+                        <div class="tool-objective-text">Évaluer les compétences techniques et interpersonnelles des potentiels recrus</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
                 </div>
 
-                <!-- Outil 21 -->
+                <!-- Annexe 21 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">21</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Parcours d'intégration collaborateur</h3>
-                            <span class="tool-format word">Word</span>
+                            <h3 class="tool-title">Carte mentale intégration collaborateur</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Programme d'onboarding structuré : semaine type, formations initiales, mentorat et jalons de validation de la période d'essai.</p>
+                    <p class="tool-description">Parcours d'onboarding visuel pour les nouveaux collaborateurs avec jalons et objectifs à atteindre.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Accélérer la montée en compétences et renforcer l'engagement dès l'arrivée</div>
+                        <div class="tool-objective-text">Organiser l'intégration des nouveaux collaborateurs au sein du cabinet</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
                 </div>
 
-                <!-- Outil 22 -->
+                <!-- Annexe 22 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">22</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Grille d'évaluation des collaborateurs</h3>
+                            <h3 class="tool-title">Grille de suivi de formation des collaborateurs en fonction de leurs champs de compétences</h3>
                             <span class="tool-format excel">Excel</span>
                         </div>
                     </div>
-                    <p class="tool-description">Matrice de compétences par grade : critères d'évaluation, scoring, identification des axes de progression et plan d'action.</p>
+                    <p class="tool-description">Tableau de bord Excel pour suivre les formations réalisées, planifiées et les compétences acquises par chaque collaborateur.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Objectiver l'évaluation et piloter le développement des compétences de l'équipe</div>
+                        <div class="tool-objective-text">Suivre le plan de formation des collaborateurs en fonction de leurs compétences</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
@@ -1274,66 +1157,40 @@
                     </div>
                 </div>
 
-                <!-- Outil 23 -->
+                <!-- Annexe 23 -->
                 <div class="tool-card animate-on-scroll">
                     <span class="status-badge status-pending">À venir</span>
                     <div class="tool-header">
                         <div class="tool-number">23</div>
                         <div class="tool-title-block">
-                            <h3 class="tool-title">Plan de formation</h3>
-                            <span class="tool-format word">Word</span>
+                            <h3 class="tool-title">Baromètre d'Engagement et Plan de Rétention</h3>
+                            <span class="tool-format html">HTML</span>
                         </div>
                     </div>
-                    <p class="tool-description">Dispositif de développement des compétences : catalogue, parcours individualisés, suivi des 40h obligatoires et budget prévisionnel.</p>
+                    <p class="tool-description">Outil d'analyse de l'engagement des collaborateurs avec indicateurs clés et plan d'actions pour la fidélisation des talents.</p>
                     <div class="tool-objective">
                         <div class="tool-objective-label">Objectif</div>
-                        <div class="tool-objective-text">Assurer la montée en compétences continue et la conformité aux obligations de formation</div>
+                        <div class="tool-objective-text">Évaluer l'engagement des collaborateurs et construire une stratégie de rétention efficace</div>
                     </div>
                     <div class="tool-actions">
                         <a href="#" class="tool-btn tool-btn-disabled">
-                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                             Bientôt disponible
                         </a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- About Section -->
-        <section id="about" class="section-intro" style="margin-top: 4rem; padding: 4rem 2rem; background: white; border-radius: 20px; box-shadow: var(--shadow-soft);">
-            <h2>À propos de ce mémoire</h2>
-            <p style="margin-bottom: 2rem;">Ce mémoire s'inscrit dans le cadre du Diplôme d'Expertise Comptable (DEC). Il propose un guide opérationnel complet pour l'expert-comptable souhaitant créer un cabinet 100% numérique, sans locaux physiques, en conformité avec les exigences professionnelles et réglementaires.</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: left; margin-top: 3rem;">
-                <div>
-                    <h4 style="color: var(--accent); margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Conformité normative</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Code de déontologie, RGPD, LCB-FT, obligations CNOEC, cybersécurité ANSSI</p>
-                </div>
-                <div>
-                    <h4 style="color: var(--accent); margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Cas pratique</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Cabinet X — Expert-comptable créateur, 2-3 ans d'expérience, clientèle TPE/PME</p>
-                </div>
-                <div>
-                    <h4 style="color: var(--accent); margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Session</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Diplôme d'Expertise Comptable — Mai 2026</p>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <footer>
+    <footer id="about">
         <div class="footer-content">
-            <div class="footer-brand">
-                <h3>Mémoire <span>DEC</span></h3>
-                <p>Guide pratique à la création d'un cabinet d'expertise comptable 100% numérique. 23 outils opérationnels pour accompagner l'expert-comptable créateur de sa stratégie à la fidélisation de son équipe.</p>
-            </div>
             <div class="footer-section">
                 <h4>Navigation</h4>
                 <ul>
                     <li><a href="#partie1">Partie I — Stratégie</a></li>
                     <li><a href="#partie2">Partie II — Clients</a></li>
                     <li><a href="#partie3">Partie III — Équipe</a></li>
-                    <li><a href="#about">À propos</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -1345,14 +1202,20 @@
                     <li><a href="https://www.ssi.gouv.fr" target="_blank">ANSSI</a></li>
                 </ul>
             </div>
+            <div class="footer-section">
+                <h4>À propos</h4>
+                <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                    Ce mémoire est présenté en vue de l'obtention du Diplôme d'Expertise Comptable (DEC) — Session 2026.
+                </p>
+            </div>
         </div>
         <div class="footer-bottom">
-            <p>Mémoire DEC — Session Mai 2026 — Tous droits réservés</p>
+            <p>© 2026 — Mémoire DEC | Cabinet 100% Numérique</p>
         </div>
     </footer>
 
     <script>
-        // Scroll animation observer
+        // Animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1379,22 +1242,18 @@
             event.target.classList.add('active');
         }
 
-        // Update active nav on scroll
+        // Update active tab on scroll
         window.addEventListener('scroll', () => {
             const sections = ['partie1', 'partie2', 'partie3'];
-            const scrollPos = window.scrollY + 200;
+            const tabs = document.querySelectorAll('.part-tab');
             
             sections.forEach((id, index) => {
                 const section = document.getElementById(id);
-                if (section) {
-                    const sectionTop = section.offsetTop;
-                    const sectionBottom = sectionTop + section.offsetHeight;
-                    
-                    if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
-                        document.querySelectorAll('.part-tab').forEach((tab, i) => {
-                            tab.classList.toggle('active', i === index);
-                        });
-                    }
+                const rect = section.getBoundingClientRect();
+                
+                if (rect.top <= 200 && rect.bottom >= 200) {
+                    tabs.forEach(tab => tab.classList.remove('active'));
+                    tabs[index].classList.add('active');
                 }
             });
         });

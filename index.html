@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outils du Mémoire DEC | Cabinet 100% Numérique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2940;
+            --secondary: #2d4a6f;
+            --accent: #c9a227;
+            --accent-light: #e8d48a;
+            --bg-cream: #faf8f5;
+            --bg-warm: #f5f2ed;
+            --text-dark: #1a1a1a;
+            --text-muted: #5a5a5a;
+            --border-subtle: rgba(26, 41, 64, 0.1);
+            --shadow-soft: 0 4px 20px rgba(26, 41, 64, 0.08);
+            --shadow-hover: 0 8px 40px rgba(26, 41, 64, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, #3d5a80 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(201, 162, 39, 0.2);
+            color: var(--accent-light);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.8);
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 3rem;
+            animation: fadeInUp 0.8s ease 0.6s backwards;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+
+        .stat-label {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        /* Section Intro */
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-intro h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-intro p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Parts Navigation */
+        .parts-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .part-tab {
+            padding: 1rem 2rem;
+            background: white;
+            border: 2px solid var(--border-subtle);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+        }
+
+        .part-tab:hover,
+        .part-tab.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* Tools Grid */
+        .tools-section {
+            margin-bottom: 5rem;
+        }
+
+        .part-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-subtle);
+        }
+
+        .part-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .part-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Tool Card */
+        .tool-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border-subtle);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent) 0%, var(--secondary) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .tool-card:hover::before {
+            opacity: 1;
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .tool-number {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .tool-title-block {
+            flex: 1;
+        }
+
+        .tool-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.3;
+            margin-bottom: 0.25rem;
+        }
+
+        .tool-format {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            background: var(--bg-warm);
+        }
+
+        .tool-format.excel {
+            color: #217346;
+            background: rgba(33, 115, 70, 0.1);
+        }
+
+        .tool-format.html {
+            color: #e44d26;
+            background: rgba(228, 77, 38, 0.1);
+        }
+
+        .tool-format.word {
+            color: #2b579a;
+            background: rgba(43, 87, 154, 0.1);
+        }
+
+        .tool-format.pdf {
+            color: #f40f02;
+            background: rgba(244, 15, 2, 0.1);
+        }
+
+        .tool-format.notion {
+            color: #000;
+            background: rgba(0, 0, 0, 0.08);
+        }
+
+        .tool-format.prezi {
+            color: #3181ff;
+            background: rgba(49, 129, 255, 0.1);
+        }
+
+        .tool-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .tool-objective {
+            background: var(--bg-warm);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .tool-objective-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-objective-text {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            font-style: italic;
+        }
+
+        .tool-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .tool-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .tool-btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .tool-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 41, 64, 0.3);
+        }
+
+        .tool-btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--border-subtle);
+        }
+
+        .tool-btn-secondary:hover {
+            border-color: var(--primary);
+            background: var(--bg-warm);
+        }
+
+        .tool-btn-disabled {
+            background: var(--bg-warm);
+            color: var(--text-muted);
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        /* Icon styles */
+        .icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand h3 span {
+            color: var(--accent);
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-section h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .parts-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .part-tab {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+
+        /* Status indicator */
+        .status-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-ready {
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+        }
+
+        .status-pending {
+            background: rgba(251, 191, 36, 0.1);
+            color: #f59e0b;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .tooltip:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Mémoire <span>DEC</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#partie1">Partie I</a></li>
+                    <li><a href="#partie2">Partie II</a></li>
+                    <li><a href="#partie3">Partie III</a></li>
+                    <li><a href="#about">À propos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Diplôme d'Expertise Comptable — Session 2026</div>
+            <h1>Entreprendre en tant qu'expert-comptable dans un univers <span>numérisé</span></h1>
+            <p class="hero-subtitle">Guide pratique à la création d'un cabinet 100% numérique — Outils et annexes opérationnels</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">23</span>
+                    <span class="stat-label">Outils pratiques</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Parties structurantes</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Opérationnel</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="section-intro animate-on-scroll">
+            <h2>Boîte à outils du cabinet numérique</h2>
+            <p>Ces 23 outils constituent le cœur opérationnel du mémoire. Conçus pour être immédiatement exploitables, ils accompagnent l'expert-comptable créateur à chaque étape de son projet : du diagnostic initial jusqu'à la fidélisation de ses équipes.</p>
+        </section>
+
+        <div class="parts-nav">
+            <button class="part-tab active" onclick="scrollToSection('partie1')">Partie I — Stratégie</button>
+            <button class="part-tab" onclick="scrollToSection('partie2')">Partie II — Clients</button>
+            <button class="part-tab" onclick="scrollToSection('partie3')">Partie III — Équipe</button>
+        </div>
+
+        <!-- PARTIE I -->
+        <section id="partie1" class="tools-section">
+            <div class="part-header">
+                <span class="part-number">I</span>
+                <div>
+                    <h2 class="part-title">Construire les fondations du cabinet numérique</h2>
+                </div>
+            </div>
+
+            <div class="tools-grid">
+                <!-- Outil 1 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">01</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Chiffres clés des cabinets d'expertise comptable</h3>
+                            <span class="tool-format pdf">PDF</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Panorama statistique de la profession : structure du marché, tendances économiques, benchmarks de performance pour calibrer son positionnement.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Disposer de données sectorielles fiables pour éclairer les arbitrages stratégiques</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 2 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">02</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Diagnostic de maturité numérique</h3>
+                            <span class="tool-format excel">Excel</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Grille d'auto-évaluation sur 15 critères couvrant infrastructure, compétences et processus. Score automatique et axes de progression.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Évaluer objectivement sa maturité digitale et identifier les priorités d'investissement</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 3 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">03</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Matrice SWOT numérique</h3>
+                            <span class="tool-format word">Word</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Analyse stratégique adaptée au contexte digital : forces/faiblesses internes, opportunités/menaces du marché numérisé.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Orienter la stratégie numérique en fonction du diagnostic terrain</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 4 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">04</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Diagramme de PERT</h3>
+                            <span class="tool-format word">Word</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Planification du projet de création avec identification du chemin critique, des dépendances et des marges de manœuvre.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Maîtriser le calendrier de création et anticiper les goulets d'étranglement</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 5 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">05</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Carte mentale des organisations OEC</h3>
+                            <span class="tool-format prezi">Prezi</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Navigation interactive dans l'écosystème institutionnel : CNOEC, CROEC, organismes de formation, ressources disponibles.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">S'orienter efficacement dans les ressources institutionnelles de la profession</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 6 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">06</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Cartographie du système d'information</h3>
+                            <span class="tool-format prezi">Prezi</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Architecture visuelle du SI cible : briques logicielles, flux de données, points d'intégration, redondances à éliminer.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Concevoir un écosystème numérique cohérent et interopérable</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 7 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">07</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Prévisionnel financier détaillé</h3>
+                            <span class="tool-format excel">Excel</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Modèle financier complet avec simulations multi-scénarios, seuils de rentabilité, plan de trésorerie et indicateurs de viabilité.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Valider la faisabilité économique et piloter les arbitrages d'investissement</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 8 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">08</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Business Model Canvas</h3>
+                            <span class="tool-format word">Word</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Formalisation du modèle économique : proposition de valeur, segments clients, canaux, ressources clés et structure de coûts.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Structurer et communiquer le modèle d'affaires du cabinet numérique</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 9 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">09</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Planification des tâches</h3>
+                            <span class="tool-format notion">Notion/Trello</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Template de gestion de projet : workflows, attribution des responsabilités, suivi d'avancement et points de contrôle.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Organiser efficacement les missions internes et le suivi de production</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 10 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">10</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Comparatif des logiciels de gestion</h3>
+                            <span class="tool-format excel">Excel</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Analyse multicritère des solutions du marché : fonctionnalités, tarification, intégrations, support et évolutivité.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Sélectionner les outils adaptés au cabinet sur des bases objectives</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 11 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">11</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Matrice des risques</h3>
+                            <span class="tool-format prezi">Prezi</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Cartographie visuelle des risques : identification, évaluation probabilité/impact, mesures de mitigation et suivi.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Anticiper et gérer proactivement les risques du projet numérique</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PARTIE II -->
+        <section id="partie2" class="tools-section">
+            <div class="part-header">
+                <span class="part-number">II</span>
+                <div>
+                    <h2 class="part-title">Conquérir et fidéliser les clients</h2>
+                </div>
+            </div>
+
+            <div class="tools-grid">
+                <!-- Outil 12 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">12</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Prompts IA pour LinkedIn</h3>
+                            <span class="tool-format word">Word</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Bibliothèque de prompts optimisés pour la prospection et la création de contenu professionnel, conformes à la déontologie.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Développer sa visibilité professionnelle de manière éthique et efficace</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 13 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">13</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Questionnaire de prise de connaissance client</h3>
+                            <span class="tool-format word">Word</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Trame structurée pour le premier entretien : situation de l'entreprise, besoins, attentes, et éléments d'évaluation des risques LCB-FT.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Collecter systématiquement les informations nécessaires à l'acceptation de mission</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 14 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">14</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Lettre de mission type</h3>
+                            <span class="tool-format word">Word</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Modèle contractuel complet : périmètre de mission, obligations réciproques, honoraires, clauses RGPD et conditions générales.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Sécuriser juridiquement la relation client dès le démarrage</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 15 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">15</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Process d'onboarding client</h3>
+                            <span class="tool-format word">Word</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Parcours d'intégration détaillé : étapes, check-lists, modèles de communication et jalons de validation.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Garantir une prise en charge fluide et professionnelle des nouveaux clients</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 16 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">16</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Check-list conformité RGPD</h3>
+                            <span class="tool-format excel">Excel</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Audit de conformité complet : registre des traitements, analyse d'impact, droits des personnes et mesures de sécurité.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Vérifier et documenter la conformité aux exigences de protection des données</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 17 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">17</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Tableau de bord fidélisation</h3>
+                            <span class="tool-format excel">Excel</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Pilotage de la relation client : indicateurs de satisfaction, alerte attrition, calendrier des contacts et actions de fidélisation.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Anticiper et prévenir le départ des clients par un suivi proactif</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 18 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">18</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Grille tarifaire</h3>
+                            <span class="tool-format excel">Excel</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Structuration de la politique de prix : forfaits, tarifs horaires, packages de services et simulateur de devis.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Construire une offre tarifaire cohérente, rentable et lisible pour les clients</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PARTIE III -->
+        <section id="partie3" class="tools-section">
+            <div class="part-header">
+                <span class="part-number">III</span>
+                <div>
+                    <h2 class="part-title">Recruter, intégrer et fidéliser les collaborateurs</h2>
+                </div>
+            </div>
+
+            <div class="tools-grid">
+                <!-- Outil 19 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">19</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Process de recrutement</h3>
+                            <span class="tool-format word">Word</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Méthodologie complète d'embauche : sourcing, grille d'entretien, tests techniques, évaluation et onboarding administratif.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Professionnaliser le recrutement pour attirer et sélectionner les bons profils</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 20 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">20</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Fiche de poste type</h3>
+                            <span class="tool-format word">Word</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Modèle adaptable aux différents grades : missions, compétences requises, rattachement, objectifs et évolutions possibles.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Définir clairement les rôles pour une organisation efficace et des recrutements ciblés</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 21 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">21</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Parcours d'intégration collaborateur</h3>
+                            <span class="tool-format word">Word</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Programme d'onboarding structuré : semaine type, formations initiales, mentorat et jalons de validation de la période d'essai.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Accélérer la montée en compétences et renforcer l'engagement dès l'arrivée</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 22 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">22</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Grille d'évaluation des collaborateurs</h3>
+                            <span class="tool-format excel">Excel</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Matrice de compétences par grade : critères d'évaluation, scoring, identification des axes de progression et plan d'action.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Objectiver l'évaluation et piloter le développement des compétences de l'équipe</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outil 23 -->
+                <div class="tool-card animate-on-scroll">
+                    <span class="status-badge status-pending">À venir</span>
+                    <div class="tool-header">
+                        <div class="tool-number">23</div>
+                        <div class="tool-title-block">
+                            <h3 class="tool-title">Plan de formation</h3>
+                            <span class="tool-format word">Word</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Dispositif de développement des compétences : catalogue, parcours individualisés, suivi des 40h obligatoires et budget prévisionnel.</p>
+                    <div class="tool-objective">
+                        <div class="tool-objective-label">Objectif</div>
+                        <div class="tool-objective-text">Assurer la montée en compétences continue et la conformité aux obligations de formation</div>
+                    </div>
+                    <div class="tool-actions">
+                        <a href="#" class="tool-btn tool-btn-disabled">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Bientôt disponible
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-intro" style="margin-top: 4rem; padding: 4rem 2rem; background: white; border-radius: 20px; box-shadow: var(--shadow-soft);">
+            <h2>À propos de ce mémoire</h2>
+            <p style="margin-bottom: 2rem;">Ce mémoire s'inscrit dans le cadre du Diplôme d'Expertise Comptable (DEC). Il propose un guide opérationnel complet pour l'expert-comptable souhaitant créer un cabinet 100% numérique, sans locaux physiques, en conformité avec les exigences professionnelles et réglementaires.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: left; margin-top: 3rem;">
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Conformité normative</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Code de déontologie, RGPD, LCB-FT, obligations CNOEC, cybersécurité ANSSI</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Cas pratique</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Cabinet X — Expert-comptable créateur, 2-3 ans d'expérience, clientèle TPE/PME</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Session</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Diplôme d'Expertise Comptable — Mai 2026</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Mémoire <span>DEC</span></h3>
+                <p>Guide pratique à la création d'un cabinet d'expertise comptable 100% numérique. 23 outils opérationnels pour accompagner l'expert-comptable créateur de sa stratégie à la fidélisation de son équipe.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#partie1">Partie I — Stratégie</a></li>
+                    <li><a href="#partie2">Partie II — Clients</a></li>
+                    <li><a href="#partie3">Partie III — Équipe</a></li>
+                    <li><a href="#about">À propos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Références</h4>
+                <ul>
+                    <li><a href="https://www.experts-comptables.fr" target="_blank">CNOEC</a></li>
+                    <li><a href="https://bibliotique.fr" target="_blank">Bibliotique</a></li>
+                    <li><a href="https://www.cnil.fr" target="_blank">CNIL / RGPD</a></li>
+                    <li><a href="https://www.ssi.gouv.fr" target="_blank">ANSSI</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Mémoire DEC — Session Mai 2026 — Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll to section
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            
+            // Update active tab
+            document.querySelectorAll('.part-tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Update active nav on scroll
+        window.addEventListener('scroll', () => {
+            const sections = ['partie1', 'partie2', 'partie3'];
+            const scrollPos = window.scrollY + 200;
+            
+            sections.forEach((id, index) => {
+                const section = document.getElementById(id);
+                if (section) {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    
+                    if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+                        document.querySelectorAll('.part-tab').forEach((tab, i) => {
+                            tab.classList.toggle('active', i === index);
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
